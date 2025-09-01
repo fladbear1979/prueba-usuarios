@@ -8,7 +8,8 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/usuarios', usuariosRouter);
 
-mongoose.connect('mongodb://localhost/prueba-usuarios', { useNewUrlParser: true, useUnifiedTopology: true })
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/prueba-usuarios';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Conectado a MongoDB'))
   .catch(err => console.error('No se pudo conectar a MongoDB', err));
 
