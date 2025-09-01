@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Conexión a la base de datos
 const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/prueba-usuarios';
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Conectado a MongoDB'))
   .catch(err => console.error('Error de conexión a MongoDB', err));
 
