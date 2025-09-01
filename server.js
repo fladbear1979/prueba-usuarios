@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // Conexión a la base de datos
-mongoose.connect('mongodb://localhost/prueba-usuarios', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/prueba-usuarios', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Conectado a MongoDB'))
   .catch(err => console.error('No se pudo conectar a MongoDB', err));
 
